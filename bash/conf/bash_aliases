@@ -1,0 +1,52 @@
+# ls
+alias l='ls -FG'
+alias ls='ls -FG'
+## 隠しファイル表示
+alias la='ls -aFG'
+## 詳細を表示する
+alias ll='ls -alFG'
+
+# cd
+alias ..='cd ../'
+alias ...='cd ../../'
+
+# git
+alias gb='git branch'
+alias gs='git status'
+alias gst='git status'
+alias gl='git log'
+alias gp='git pull --prune'
+
+# vim alias
+alias v='vim'
+alias vi='vim'
+alias emacs='vim' # the war
+
+# bashrc bash_profile
+alias vibashrc='vim ~/.bashrc'
+alias vibashp='vim ~/.bash_profile'
+alias vibasha='vim ~/.bash_aliases'
+alias sourcep='source ~/.bash_profile'
+alias sourcerc='source ~/.bashrc'
+
+# top
+alias top='htop'
+
+# docker
+alias d='docker'
+
+# docker-compose
+alias dc='docker-compose'
+alias dcu='docker-compose up --build'
+alias dcd='docker-compose down'
+alias dcdall='docker-compose down --rmi all'
+
+# docker remote server
+
+alias rdocker='docker -H ssh://earth-docker'
+#alias docker='docker -H ssh://earth-docker'
+
+#alias rdc='docker-compose -H ssh://earth-docker'
+
+# gnu command
+alias sed='gsed'

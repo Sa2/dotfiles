@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+test "${SSM_DEBUG:-}" = 1 && set -x
+
+INSTANCE="$1"
+PORT="$2"
+
+IFS='.' read -r name env product <<< "$INSTANCE"
+
+instance_id=$(
+  aws ec2 describe-instances \
+    --filters \
+      "Name=instance-state-name,Values=running" \
+      "Name=tag:Product,Values=[$product]" \
+      "Name=tag:Env,Values=[$env]" \
+      "Name=tag:Name,Values=[$name]" \
+    --query \
+      'Reservations[0].Instances[0].InstanceId' \
+    --output \
+      text
+)
+
+test "$instance_id" = "None" && {
+  echo "No such instance, tagged with 'Product:$product' 'Env:$env' 'Name:$name'" 1>&2
+  echo "It might be caused by aws profile unmatch. Please check 'AWS_DEFAULT_PROFILE'." 1>&2
+  exit 1
+}
+
+echo "Target InstaceId: $instance_id" 1>&2
+echo "Starting a SSM-SSH Session..." 1>&2
+
+exec aws ssm start-session --target "$instance_id" \
+   --document-name AWS-StartSSHSession \
+   --parameters "portNumber=[$PORT]"

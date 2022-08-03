@@ -1,0 +1,20 @@
+[user]
+[core]
+	editor = /opt/homebrew/bin/vim
+[alias]
+  ad = add
+  br = branch
+  ci = commit
+  cia = commit --amend
+  cih = commit --amend -C HEAD
+  co = checkout
+  d = diff
+  dc = diff --cached
+  di = diff
+  lg = log --oneline --decorate --graph -n 20
+  st = status
+  su = config --global user.name
+  psh = push origin HEAD
+  rb = rebase
+  rbo = rebase --onto
+  rsh = reset --hard

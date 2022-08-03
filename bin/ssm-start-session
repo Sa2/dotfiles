@@ -1,0 +1,27 @@
+#! /bin/bash
+
+ssm-start-session() {
+    local arg="$*"
+    local instance
+    aws ssm describe-instance-information | jq -r '.InstanceInformationList[].InstanceId' > /tmp/ssm-instances
+    instance=$(
+        aws ec2 describe-instances \
+        --instance-ids $(cat /tmp/ssm-instances) \
+        --filters "Name=instance-state-name,Values=running" |
+        jq -cr '
+        .Reservations[].Instances[] |
+        [
+        .InstanceId,
+        (.Tags[] | select(.Key == "Product").Value),
+        (.Tags[] | select(.Key == "Env").Value),
+        (.Tags[] | select(.Key == "Name").Value)
+        ] |
+        @tsv
+        ' | sort -bk 2 | peco --query "$arg"
+        )
+
+    test -z "$instance" && return
+    echo "---> $instance"
+#    aws ssm start-session --target "$(echo $instance | awk '{print $1}')"
+    aws ssm start-session --target "$(echo $instance | awk '{print $1}')" --document-name AWS-StartInteractiveCommand --parameters command="cd ~; bash -l"
+}

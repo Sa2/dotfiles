@@ -1,0 +1,130 @@
+set t_Co=256
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set expandtab    "タブをスペースにする
+"set noet          "タブをタブ文字にする
+set backspace=2 " バックスペース有効化
+set number
+set nobackup                   " バックアップを作らない
+set noswapfile                 " swapファイルを作らない
+set autoread                   " 他で書き換えられたら自動で読み直す
+set laststatus=2               "常にステータス行を表示
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+set hlsearch
+set incsearch
+
+filetype off
+
+"dein Scripts-----------------------------
+if &compatible
+    set nocompatible
+endif
+
+" Required:
+set runtimepath^=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('~/.cache/dein'))
+
+call dein#add('Shougo/dein.vim')
+" 何故かコイツが落ちる
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+
+call dein#add('vim-scripts/VimClojure')
+call dein#add('Shougo/vimshell')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/neocomplcache')
+call dein#add('Shougo/neosnippet')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+call dein#add('soramugi/auto-ctags.vim')
+call dein#add('jpalardy/vim-slime')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('scrooloose/syntastic')
+call dein#add('https://github.com/leafgarland/typescript-vim.git')
+call dein#add('https://github.com/clausreinke/typescript-tools.git')
+call dein#add('scrooloose/nerdtree')
+call dein#add('ekalinin/Dockerfile.vim')
+call dein#add('mattn/emmet-vim')
+call dein#add('vim-scripts/open-browser.vim')
+call dein#add('mattn/webapi-vim')
+call dein#add('derekwyatt/vim-scala')
+call dein#add('tell-k/vim-browsereload-mac')
+call dein#add('hail2u/vim-css3-syntax')
+" vim80ではデフォルトモジュールと競合するため使用しない。
+"call dein#add('taichouchou2/html5.vim')
+call dein#add('kchmck/vim-coffee-script')
+call dein#add('vim-scripts/AutoComplPop') " コードヒント
+call dein#add('cakebaker/scss-syntax.vim') " Sassシンタックス
+call dein#add('https://github.com/thinca/vim-ref.git')
+call dein#add('https://github.com/Shougo/neocomplete.vim.git')
+" GitHubの鍵認証が必要になる・・・
+"call dein#add('https://github.com/Shougo/unite-outline.vim')
+
+" PHP
+call dein#add('https://github.com/vim-scripts/smarty-syntax.git')
+
+" GIt
+call dein#add('tpope/vim-fugitive')
+
+" カラーテーマ
+call dein#add('w0ng/vim-hybrid')
+
+" Required:
+call dein#end()
+"
+" " Required:
+filetype plugin indent on
+"
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
+syntax on
+
+"let g:hybrid_custom_term_colors = 1
+"let g:hybrid_reduced_contrast = 1 " Remove this line if
+set background=dark
+colorscheme hybrid
+
+command UF Unite file
+nnoremap s <Nop>
+
+" 画面分割
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+" 分割した画面間の移動
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+" 分割した画面を移動
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+" Uniteの操作
+nnoremap sT :<C-u>Unite tab<CR>
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap su :<C-u>Unite file buffer<CR>
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sn gt
+nnoremap sp gT
+
+" <esc>のキーバインド
+noremap <C-j> <esc>
+noremap! <C-j> <esc>
+
+" for HHKB
+nnoremap ; :
+
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden = 1
