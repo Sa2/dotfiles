@@ -3,7 +3,7 @@
 ./scripts/setup-brew.sh
 
 ./scripts/install-brew-component.sh
-# ./scripts/setup-chsh.sh
+./scripts/setup-chsh.sh
 
 ./scripts/install-alacritty.sh
 ./scripts/uninstall-python27.sh
