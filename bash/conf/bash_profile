@@ -51,14 +51,14 @@ fi
 
 # Functions
 
-aws-profile-switch() {
+function aws-profile-switch() {
     local profile="$(grep '\[' ~/.aws/credentials | sed -s -e 's/\[//' -e 's/\]//' | peco)"
     export AWS_PROFILE="$profile"
     # AWS CLI v2では不要
     # export AWS_DEFAULT_PROFILE="$profile"
 }
 
-display-aws-profile() {
+function display-aws-profile() {
     if [ -n "$AWS_PROFILE" ]; then 
         echo -n "AWS[$AWS_PROFILE]"
         exit
