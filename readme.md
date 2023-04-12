@@ -17,3 +17,26 @@ Vimのファイルマネージャーに coc explorer を使っています。
 以下を見て初回セットアップしてください
 
 https://github.com/weirongxu/coc-explorer
+以下を参考にしてます。
+
+https://zenn.dev/hira/articles/940549483bf2da
+
+
+:CocConfig
+
+
+```
+{
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
+}
+
+```
