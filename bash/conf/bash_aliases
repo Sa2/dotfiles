@@ -4,7 +4,8 @@ alias ls='ls -FG'
 ## 隠しファイル表示
 alias la='ls -aFG'
 ## 詳細を表示する
-alias ll='ls -alFG'
+#alias ll='ls -alFG' # for basic ls
+alias ll='ls -aglhbUm --git' # for exa
 
 # cd
 alias ..='cd ../'
@@ -16,6 +17,7 @@ alias gs='git status'
 alias gst='git status'
 alias gl='git log'
 alias gp='git pull --prune'
+alias gd='git diff'
 
 # vim alias
 alias v='vim'
@@ -50,3 +52,6 @@ alias rdocker='docker -H ssh://earth-docker'
 
 # gnu command
 alias sed='gsed'
+
+# more enhanced ls
+alias ls="exa"
