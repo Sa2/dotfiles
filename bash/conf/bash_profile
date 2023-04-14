@@ -42,6 +42,8 @@ export KUBECONFIG=${HOME}/.kube/config-jupiter kubectl get all
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
+export GPG_TTY=$(tty) # for GPG
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
