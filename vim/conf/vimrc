@@ -30,6 +30,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'github/copilot.vim'
 Plug 'glidenote/memolist.vim'
+Plug 'reireias/vim-cheatsheet'
 
 Plug 'w0ng/vim-hybrid'
 call plug#end()
@@ -42,15 +43,17 @@ syntax on
 "let g:hybrid_custom_term_colors = 1
 "let g:hybrid_reduced_contrast = 1 " Remove this line if
 
-let g:memolist_path = "~/.cache/memolist"
+let g:memolist_path = "~/.cache/memolist" " メモの保存先
+let g:cheatsheet#cheat_file = '~/.cheatsheet.md' " cheatsheetの保存先
+let g:airline#extensions#tabline#enabled = 1 "タブラインを有効化
+let g:airline#extensions#tabline#buffer_idx_mode = 1 "バッファ番号を表示
+
 
 
 set background=dark
 colorscheme hybrid
 "colorscheme nightfox
 
-
-"command UF Unite file
 nnoremap s <Nop>
 
 " 画面分割
@@ -91,4 +94,8 @@ nmap <space>e <Cmd>CocCommand explorer<CR>
 nnoremap <Leader>mn  :MemoNew<CR>
 nnoremap <Leader>ml  :MemoList<CR>
 nnoremap <Leader>mg  :MemoGrep<CR>
+
+" airline
+nmap <C-p> <Plug>AirlineSelectPrevTab
+nmap <C-n> <Plug>AirlineSelectNextTab
 

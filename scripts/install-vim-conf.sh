@@ -2,11 +2,11 @@
 
 echo "setup .vimrc"
 ln -s $(pwd)/vim/conf/vimrc ${HOME}/.vimrc
+ln -s $(pwd)/vim/conf/cheatsheet.md ${HOME}/.cheatsheet.md
 
-echo "set dein.vim"
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-# For example, we just use `~/.cache/dein` as installation directory
-sh ./installer.sh ~/.cache/dein
+echo "set vim-plug"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # clean up
 rm ./installer.sh
