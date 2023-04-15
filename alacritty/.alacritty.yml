@@ -15,8 +15,8 @@ window:
 
   # Window size
   dimensions:
-    columns: 190
-    lines: 50
+    columns: 180
+    lines: 52
   # Window class (Linux/BSD only):
   class:
     # Application instance name
