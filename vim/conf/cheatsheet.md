@@ -1,5 +1,9 @@
 # Vim
 
+## cheatscheet
+
+- :Cheat : チートシートを見る
+
 ## pane
 
 - ss : 縦に分割
@@ -44,3 +48,18 @@
 - <Leader>mn  :MemoNew<CR>
 - <Leader>ml  :MemoList<CR>
 - <Leader>mg  :MemoGrep<CR>
+
+# tmux
+
+- <C-a> : meta 
+- <C-a>c : new tab
+- <C-a>- : split
+- <C-a>| : vertical split
+
+- <C-a>n : next tab
+- <C-a>p : prevous tab
+
+# Alacritty
+
+- Ctrl+Shift+U : URL hints
+
