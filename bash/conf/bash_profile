@@ -70,3 +70,15 @@ function display-aws-profile() {
     fi
     echo -n "AWS[NO SET]"
 }
+
+# grep text
+function gtext() {
+    local file_path="$(grep $1 -rl . | peco)"
+    vim $file_path
+}
+
+# find file
+function ffile() {
+    local file_path="$(find . -type f -name *$1* | peco)"
+    vim $file_path
+}

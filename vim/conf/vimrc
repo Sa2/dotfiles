@@ -48,6 +48,13 @@ let g:cheatsheet#cheat_file = '~/.cheatsheet.md' " cheatsheetの保存先
 let g:airline#extensions#tabline#enabled = 1 "タブラインを有効化
 let g:airline#extensions#tabline#buffer_idx_mode = 1 "バッファ番号を表示
 
+"vim-go setting
+"ref. https://github.com/hnakamur/vim-go-tutorial-ja/blob/master/README.md
+let g:go_highlight_types = 1
+"let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_metalinter_autosave = 1
 
 
 set background=dark
