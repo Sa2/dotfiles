@@ -33,10 +33,17 @@ Plug 'glidenote/memolist.vim'
 Plug 'reireias/vim-cheatsheet'
 
 Plug 'w0ng/vim-hybrid'
+
+" NeoVim限定のplugin
+if has('nvim')
+endif
 call plug#end()
 
 "end vim-plug Scripts-------------------------
 
+" NeoVim限定の設定
+if has('nvim')
+endif
 
 syntax on
 
