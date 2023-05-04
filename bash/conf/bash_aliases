@@ -55,3 +55,6 @@ alias sed='gsed'
 
 # more enhanced ls
 alias ls="exa"
+
+# vim using nvim
+alias vim="nvim"
