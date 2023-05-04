@@ -40,3 +40,10 @@ https://zenn.dev/hira/articles/940549483bf2da
 }
 
 ```
+
+nvim と coc-settings.json の設定を共通化する
+
+```
+ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
+```
+
