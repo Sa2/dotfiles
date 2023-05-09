@@ -4,6 +4,11 @@
 
 - :Cheat : チートシートを見る
 
+$$ vim command
+
+- :bd : buffer閉じる
+- :GoMetaLinger : linter を手動実行（golangci-lint）で実行
+
 ## pane
 
 - ss : 縦に分割
