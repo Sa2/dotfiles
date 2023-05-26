@@ -32,8 +32,17 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'github/copilot.vim'
 Plug 'glidenote/memolist.vim'
 Plug 'reireias/vim-cheatsheet'
+Plug 'tpope/vim-fugitive'
 
 Plug 'w0ng/vim-hybrid'
+
+" for Typescript + react
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 " NeoVim限定のplugin
 if has('nvim')
