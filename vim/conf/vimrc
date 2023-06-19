@@ -44,6 +44,9 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
+" for terraform
+Plug 'hashivim/vim-terraform'
+
 " NeoVim限定のplugin
 if has('nvim')
 endif
