@@ -9,6 +9,10 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
+if [ -f `brew --prefix`/opt/homebrew/etc/bash_completion.d ]; then
+  . `brew --prefix`/opt/homebrew/etc/bash_completion.d
+fi
+
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
