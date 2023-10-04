@@ -4,8 +4,7 @@ alias ls='ls -FG'
 ## 隠しファイル表示
 alias la='ls -aFG'
 ## 詳細を表示する
-#alias ll='ls -alFG' # for basic ls
-alias ll='ls -aglhbUm --git' # for exa
+alias ll='ls -alFG' # for basic ls
 
 # cd
 alias ..='cd ../'
@@ -54,6 +53,4 @@ alias rdocker='docker -H ssh://earth-docker'
 # gnu command
 alias sed='gsed'
 
-# more enhanced ls
-alias ls="exa"
 

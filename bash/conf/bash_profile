@@ -32,6 +32,9 @@ export PATH=$GOENV_ROOT/bin:$PATH
 eval "$(goenv init -)"
 
 
+# direnv
+export EDITOR=nvim
+eval "$(direnv hook bash)"
 
 # GOLANG
 export GOENV_DISABLE_GOPATH=1
