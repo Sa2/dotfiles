@@ -47,3 +47,10 @@ nvim と coc-settings.json の設定を共通化する
 ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
 ```
 
+
+# vim-lsp
+
+設定をvim-lspに寄せる
+
+対象言語のファイルを開き [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings) を参考に `:LspInstallServer` を実行すると言語サーバーがインストールされる
+

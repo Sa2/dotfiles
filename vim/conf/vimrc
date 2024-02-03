@@ -24,12 +24,20 @@ filetype off
 
 call plug#begin()
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'lambdalisue/fern.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'github/copilot.vim'
+
+" for golang
+Plug 'mattn/vim-goimports'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 Plug 'glidenote/memolist.vim'
 Plug 'reireias/vim-cheatsheet'
 Plug 'tpope/vim-fugitive'
@@ -49,6 +57,9 @@ Plug 'hashivim/vim-terraform'
 
 " NeoVim限定のplugin
 if has('nvim')
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
+Plug 'EdenEast/nightfox.nvim'
 endif
 call plug#end()
 
@@ -71,12 +82,12 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1 "バッファ番号を表�
 "vim-go setting
 "ref. https://github.com/hnakamur/vim-go-tutorial-ja/blob/master/README.md
 let g:go_highlight_types = 1
-"let g:go_highlight_fields = 1
+let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_command = 'golangci-lint'
-let g:go_metalinter_autosave_enabled = ['gosimple', 'errcheck', 'gosec', 'staticcheck', 'bodyclose']
+"let g:go_metalinter_autosave = 1
+"let g:go_metalinter_command = 'golangci-lint'
+"let g:go_metalinter_autosave_enabled = ['gosimple', 'errcheck', 'gosec', 'staticcheck', 'bodyclose']
 "let g:go_metalinter_enabled = ['vet', 'gosimple', 'errcheck', 'gosec', 'staticcheck', 'cyclop', 'bodyclose']
 
 
@@ -85,21 +96,23 @@ set background=dark
 colorscheme hybrid
 "colorscheme nightfox
 
+nnoremap a <Nop>
 nnoremap s <Nop>
+nnoremap aa <Nop>
 
 " 画面分割
-nnoremap ss :<C-u>sp<CR>
-nnoremap sv :<C-u>vs<CR>
+nnoremap as :<C-u>sp<CR>
+nnoremap av :<C-u>vs<CR>
 " 分割した画面間の移動
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
+nnoremap aj <C-w>j
+nnoremap ak <C-w>k
+nnoremap al <C-w>l
+nnoremap ah <C-w>h
 " 分割した画面を移動
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap sH <C-w>H
+nnoremap aJ <C-w>J
+nnoremap aK <C-w>K
+nnoremap aL <C-w>L
+nnoremap aH <C-w>H
 
 " <esc>のキーバインド
 noremap <C-j> <esc>
@@ -108,18 +121,16 @@ noremap! <C-j> <esc>
 " for HHKB
 nnoremap ; :
 
-" for coc
-
+" for lsp
 " Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <cmd>LspDefinition<CR>
+nmap <silent> gy <cmd>LspTypeDefinition<CR>
+nmap <silent> gi <cmd>LspImplementation<CR>
+nmap <silent> gr <cmd>LspReferences<CR>
 
-" coc explorer
+" fern.vim
 " スペースe でエクスプローラが立ち上がる
-nmap <space>e <Cmd>CocCommand explorer<CR>
-
+nmap <space>e <Cmd>:Fern . -drawer<CR>
 
 " memolist
 nnoremap <Leader>mn  :MemoNew<CR>
@@ -130,3 +141,8 @@ nnoremap <Leader>mg  :MemoGrep<CR>
 nmap <C-p> <Plug>AirlineSelectPrevTab
 nmap <C-n> <Plug>AirlineSelectNextTab
 
+" Find files using Telescope command-line sugar. using telescope.nvim
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
