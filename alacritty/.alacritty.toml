@@ -1,0 +1,98 @@
+"cursor.style" = "Block"
+live_config_reload = true
+
+[colors.bright]
+black = "0x676767"
+blue = "0x6871ff"
+cyan = "0x5ffdff"
+green = "0x5ff967"
+magenta = "0xff76ff"
+red = "0xff6d67"
+white = "0xfffefe"
+yellow = "0xfefb67"
+
+[[colors.bright.indexed_colors]]
+color = "0xcb4b16"
+index = 16
+
+[[colors.bright.indexed_colors]]
+color = "0xd33682"
+index = 17
+
+[[colors.bright.indexed_colors]]
+color = "0x073642"
+index = 18
+
+[[colors.bright.indexed_colors]]
+color = "0x586e75"
+index = 19
+
+[[colors.bright.indexed_colors]]
+color = "0x839496"
+index = 20
+
+[[colors.bright.indexed_colors]]
+color = "0xeee8d5"
+index = 21
+
+[colors.cursor]
+cursor = "0xc7c7c7"
+text = "0xfffefe"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x9bb8dc"
+cyan = "0x00c5c7"
+green = "0x83ac8e"
+magenta = "0xbaace2"
+red = "0xe68e8e"
+white = "0xc7c7c7"
+yellow = "0xf5b78a"
+
+[colors.primary]
+background = "0x16171e"
+foreground = "0xd1d2d3"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "Source Code Pro for Powerline"
+style = "Bold"
+
+[font.italic]
+family = "Source Code Pro for Powerline"
+style = "Bold Italic"
+
+[font.normal]
+family = "Source Code Pro for Powerline"
+style = "Regular"
+
+[font.offset]
+x = 1
+y = 1
+
+[scrolling]
+history = 5000
+
+[shell]
+args = ["-l", "-c", "tmux attach || tmux"]
+program = "/opt/homebrew/bin/bash"
+
+[window]
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 180
+lines = 52
+
+[window.padding]
+x = 6
+y = 6
