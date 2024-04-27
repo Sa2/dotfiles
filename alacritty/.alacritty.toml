@@ -1,4 +1,3 @@
-"cursor.style" = "Block"
 live_config_reload = true
 
 [colors.bright]
@@ -10,30 +9,6 @@ magenta = "0xff76ff"
 red = "0xff6d67"
 white = "0xfffefe"
 yellow = "0xfefb67"
-
-[[colors.bright.indexed_colors]]
-color = "0xcb4b16"
-index = 16
-
-[[colors.bright.indexed_colors]]
-color = "0xd33682"
-index = 17
-
-[[colors.bright.indexed_colors]]
-color = "0x073642"
-index = 18
-
-[[colors.bright.indexed_colors]]
-color = "0x586e75"
-index = 19
-
-[[colors.bright.indexed_colors]]
-color = "0x839496"
-index = 20
-
-[[colors.bright.indexed_colors]]
-color = "0xeee8d5"
-index = 21
 
 [colors.cursor]
 cursor = "0xc7c7c7"

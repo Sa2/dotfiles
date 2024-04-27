@@ -9,7 +9,7 @@ brew update && brew upgrade
 brew tap jhawthorn/fzy
 brew install git bash vim nvim tmux python goenv zig z bash-completion gsed peco reattach-to-user-namespace tfenv nvm ykman netcat
 
-brew install --cask alacritty chrome
+brew install --cask alacritty chrome dbeaver-community
 
 echo 'install brew componets.... Done!'
 

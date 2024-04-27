@@ -25,18 +25,17 @@ filetype off
 call plug#begin()
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'lambdalisue/fern.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'github/copilot.vim'
+Plug 'mattn/vim-lsp-settings'
 
 " for golang
 Plug 'mattn/vim-goimports'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'glidenote/memolist.vim'
 Plug 'reireias/vim-cheatsheet'
