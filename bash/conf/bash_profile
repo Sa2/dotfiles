@@ -95,3 +95,4 @@ function ffile() {
     local file_path="$(find . -type f -name *$1* | peco)"
     vim $file_path
 }
+export PATH="/opt/homebrew/opt/mysql-client@5.7/bin:$PATH"
