@@ -98,8 +98,10 @@ colorscheme hybrid
 nnoremap s <Nop>
 
 " 画面分割
-nnoremap <C-a>s :<C-u>sp<CR>
-nnoremap <C-a>v :<C-u>vs<CR>
+nnoremap <C-a>- :<C-u>sp<CR>
+" <Bar> は|
+nnoremap <C-a><Bar> :<C-u>vs<CR>
+
 " 分割した画面間の移動
 nnoremap <C-a>j <C-w>j
 nnoremap <C-a>k <C-w>k
