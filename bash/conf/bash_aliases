@@ -54,3 +54,5 @@ alias rdocker='docker -H ssh://earth-docker'
 alias sed='gsed'
 
 
+alias colima-start='brew services start colima'
+alias colima-stop='brew services stop colima'
