@@ -13,6 +13,11 @@ if [ -f `brew --prefix`/opt/homebrew/etc/bash_completion.d ]; then
   . `brew --prefix`/opt/homebrew/etc/bash_completion.d
 fi
 
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
+
+
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
@@ -58,10 +63,10 @@ export XDG_CONFIG_HOME=~/.config
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-nvm use v20.12.0
+
 
 if [ -f ~/.bash_env ]; then
   source ~/.bash_env
@@ -71,6 +76,23 @@ fi
 
 function aws-profile-switch() {
     local profile="$(grep '\[' ~/.aws/credentials | sed -s -e 's/\[//' -e 's/\]//' | peco)"
+    export AWS_PROFILE="$profile"
+    # AWS CLI v2では不要
+    # export AWS_DEFAULT_PROFILE="$profile"
+}
+
+# function aws-sso-session-switch() {
+#     local profile="$(grep '\[sso-session' ~/.aws/config | sed -e 's/\[profile //' -e 's/\[sso-session //' -e 's/\[//' -e 's/\]//' | peco)"
+#     export AWS_PROFILE="$profile"
+# }
+
+function aws-sso-session-switch() {
+    local profile="$(grep '\[profile' ~/.aws/config | sed -e 's/\[profile //' -e 's/\[sso-session //' -e 's/\[//' -e 's/\]//' | peco)"
+    export AWS_PROFILE="$profile"
+}
+
+function aws-config-switch() {
+    local profile="$(grep '\[' ~/.aws/config | sed -e 's/\[profile //' -e 's/\[//' -e 's/\]//' | peco)"
     export AWS_PROFILE="$profile"
     # AWS CLI v2では不要
     # export AWS_DEFAULT_PROFILE="$profile"
@@ -96,3 +118,7 @@ function ffile() {
     vim $file_path
 }
 export PATH="/opt/homebrew/opt/mysql-client@5.7/bin:$PATH"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.bash 2>/dev/null || :

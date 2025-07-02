@@ -54,5 +54,7 @@ alias rdocker='docker -H ssh://earth-docker'
 alias sed='gsed'
 
 
-alias colima-start='brew services start colima'
-alias colima-stop='brew services stop colima'
+alias colima-start='rm -rf ~/.colima ~/.config/colima && colima start --cpu 4 --memory 8 --vm-type vz --vz-rosetta'
+alias colima-stop='colima stop'
+alias colima-refresh='rm -rf ~/.colima'
+

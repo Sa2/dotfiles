@@ -1,5 +1,3 @@
-live_config_reload = true
-
 [colors.bright]
 black = "0x676767"
 blue = "0x6871ff"

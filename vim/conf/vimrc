@@ -30,7 +30,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
 Plug 'mattn/vim-lsp-settings'
 
 " for golang
