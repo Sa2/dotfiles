@@ -3,6 +3,9 @@
 # load brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# load starship
+#eval "$(starship init bash)"
+
 # Source global definitions
 source /opt/homebrew/etc/bash_completion.d/git-prompt.sh
 source /opt/homebrew/etc/bash_completion.d/git-completion.bash
@@ -35,3 +38,6 @@ else
   PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[33m\]$(display-aws-profile)\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 fi
 
+
+# Created by `pipx` on 2025-10-21 14:50:24
+export PATH="$PATH:/Users/seiyasato-lp-25/Library/Python/3.9/bin"

@@ -77,6 +77,9 @@ let g:memolist_path = "~/.cache/memolist" " メモの保存先
 let g:cheatsheet#cheat_file = '~/.cheatsheet.md' " cheatsheetの保存先
 let g:airline#extensions#tabline#enabled = 1 "タブラインを有効化
 let g:airline#extensions#tabline#buffer_idx_mode = 1 "バッファ番号を表示
+"let g:airline_theme = 'night_owl'               " テーマの指定
+let g:airline_powerline_fonts = 1            " Powerline Fontsを利用
+
 
 "vim-go setting
 "ref. https://github.com/hnakamur/vim-go-tutorial-ja/blob/master/README.md

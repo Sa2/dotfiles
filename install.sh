@@ -4,9 +4,9 @@
 
 ./scripts/install-brew-component.sh
 ./scripts/setup-chsh.sh
+./scripts/install-python.sh
 
 ./scripts/install-alacritty.sh
-./scripts/uninstall-python27.sh
 
 ./scripts/install-enhancd.sh
 ./scripts/install-bash-conf.sh

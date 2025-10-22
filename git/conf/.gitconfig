@@ -1,6 +1,6 @@
 [user]
 [core]
-	editor = /opt/homebrew/bin/vim
+	editor = /opt/homebrew/bin/nvim
 [alias]
   ad = add
   br = branch
