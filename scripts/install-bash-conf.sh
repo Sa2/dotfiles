@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 echo "setup PATH"
-sudo ln -s $(pwd)/bash/bin/get_battery_tmux /usr/local/bin/get_battery_tmux
-sudo ln -s $(pwd)/bash/bin/get_load_average_tmux /usr/local/bin/get_load_average_tmux
-sudo ln -s $(pwd)/bash/bin/get_ssid_tmux /usr/local/bin/get_ssid_tmux
-sudo ln -s $(pwd)/bash/bin/get_volume_tmux /usr/local/bin/get_volume_tmux
+# Link the tmux status-bar helpers into ~/bin (already on PATH via bash_profile),
+# so no sudo / /usr/local/bin write access is required.
+mkdir -p "${HOME}/bin"
+for s in get_battery_tmux get_load_average_tmux get_ssid_tmux get_volume_tmux tmux-weather; do
+  ln -sf "$(pwd)/bash/bin/${s}" "${HOME}/bin/${s}"
+done
 
 echo "setup bash config"
 ln -s $(pwd)/bash/conf/bash_profile ${HOME}/.bash_profile
