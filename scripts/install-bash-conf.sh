@@ -9,9 +9,9 @@ for s in get_battery_tmux get_load_average_tmux get_ssid_tmux get_volume_tmux tm
 done
 
 echo "setup bash config"
-ln -s $(pwd)/bash/conf/bash_profile ${HOME}/.bash_profile
-ln -s $(pwd)/bash/conf/bashrc ${HOME}/.bashrc
-ln -s $(pwd)/bash/conf/bash_aliases ${HOME}/.bash_aliases
+ln -sf $(pwd)/bash/conf/bash_profile ${HOME}/.bash_profile
+ln -sf $(pwd)/bash/conf/bashrc ${HOME}/.bashrc
+ln -sf $(pwd)/bash/conf/bash_aliases ${HOME}/.bash_aliases
 
 echo "add bash custom env file"
 cp ./bash/conf/bash_env ~/.bash_env
