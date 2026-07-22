@@ -1,0 +1,4 @@
+#!/bin/sh
+# Wrapper so tmux.conf's `#(tmux-weather)` resolves to the xamut/tmux-weather plugin.
+# The plugin is installed by tpm (see install-tmux-conf.sh + `prefix + I`).
+exec "$HOME/.tmux/plugins/tmux-weather/scripts/weather.sh" "$@"
